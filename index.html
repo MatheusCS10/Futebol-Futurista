@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol Futurista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-item active" onclick="showTab('tactics')">Táticas Futuristas</div>
+            <div class="sidebar-item" onclick="showTab('players')">Super Jogadores</div>
+            <div class="sidebar-item" onclick="showTab('simulation')">Simulação Quântica</div>
+            <div class="sidebar-item" onclick="showTab('analysis')">Análise Multidimensional</div>
+            <div class="sidebar-item" onclick="showTab('history')">Reescrever História</div>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <h2 id="current-tab">Táticas Futuristas</h2>
+                <div class="nav-buttons">
+                    <button onclick="navigate(-1)">←</button>
+                    <button onclick="navigate(1)">→</button>
+                </div>
+            </div>
+
+            <div id="tactics-tab" class="content-area">
+                <div class="field-container">
+                    <div id="soccer-field" class="soccer-field">
+                        <div class="field-line" style="width: 100%; height: 2px; top: 50%;"></div>
+                        <div class="field-line" style="width: 2px; height: 100%; left: 50%;"></div>
+                        <div class="center-circle"></div>
+                    </div>
+                    <div class="controls">
+                        <button onclick="changeFormation('4-3-3')">4-3-3 Clássico</button>
+                        <button onclick="changeFormation('3-4-3')">3-4-3 Ofensivo</button>
+                        <button onclick="changeFormation('5-3-2')">5-3-2 Defensivo</button>
+                        <button onclick="simulateQuantumMatch()">Simular Partida Quântica</button>
+                    </div>
+                    <div id="customization-options">
+                        <select id="field-shape" onchange="changeFieldShape()">
+                            <option value="rectangle">Retângulo Clássico</option>
+                            <option value="circle">Círculo Futurista</option>
+                            <option value="triangle">Triângulo Desafiador</option>
+                        </select>
+                        <select id="gravity-setting" onchange="changeGravity()">
+                            <option value="normal">Gravidade Normal</option>
+                            <option value="low">Gravidade Baixa</option>
+                            <option value="high">Gravidade Alta</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="player-list" class="player-list"></div>
+            </div>
+
+            <div id="players-tab" class="content-area hidden">
+                <h3>Laboratório de Super Jogadores</h3>
+                <input type="text" id="player-search" placeholder="Buscar jogadores..." class="search-box">
+                <div id="player-list"></div>
+                <div id="player-details" class="hidden">
+                    <h4 id="player-name"></h4>
+                    <img id="player-photo" style="width: 200px; height: 200px;">
+                    <p id="player-role"></p>
+                    <p id="player-description"></p>
+                    <p id="player-enhancements"></p>
+                </div>
+            </div>
+
+            <div id="simulation-tab" class="content-area hidden">
+                <h3>Simulação Quântica de Jogo</h3>
+                <button onclick="simulateQuantumMatch()">Iniciar Simulação Quântica</button>
+                <div id="match-simulation"></div>
+            </div>
+
+            <div id="analysis-tab" class="content-area hidden">
+                <h3>Análise de Desempenho Multidimensional</h3>
+                <div id="performance-analysis"></div>
+            </div>
+
+            <div id="history-tab" class="content-area hidden">
+                <h3>Reescrever a História do Futebol</h3>
+                <select id="historic-moment">
+                    <option value="maradona">Maradona</option>
+                    <option value="zidane">Cabeçada de Zidane</option>
+                    <option value="brazil7x1">Brasil 1 x 7 Alemanha</option>
+                </select>
+                <button onclick="rewriteHistory()">Reescrever História</button>
+                <div id="rewritten-history"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
