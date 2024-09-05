@@ -39,6 +39,9 @@ O **Futebol Futurista** é uma aplicação web desenvolvida com o objetivo de ex
 - **Táticas Futuristas**: Selecione uma formação e ajuste o campo de futebol usando as opções de customização. Simule partidas para ver o impacto das mudanças.
 - **Super Jogadores**: Utilize a caixa de pesquisa para encontrar um jogador específico e visualize seus detalhes.
 
+## Créditos
+Este projeto foi criado como parte da Imersão Dev da Alura em colaboração com o Google Gemini.
+
 ## Contribuições
 
 Contribuições são bem-vindas! Se você encontrar algum bug ou tiver uma ideia para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
