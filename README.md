@@ -43,4 +43,6 @@ O **Futebol Futurista** é uma aplicação web desenvolvida com o objetivo de ex
 
 Contribuições são bem-vindas! Se você encontrar algum bug ou tiver uma ideia para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
+## Acesse o projeto
+https://futebolfuturistaalura.netlify.app/
 
