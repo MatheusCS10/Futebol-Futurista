@@ -9,7 +9,7 @@ O **Futebol Futurista** é uma aplicação web desenvolvida durante a Imersão D
    * Implementa uma funcionalidade de busca que permite aos usuários encontrar jogadores específicos pelo nome.
    * Exibe informações detalhadas sobre cada jogador, incluindo função, classificação e habilidades especiais.
 
-## Funcionalidades Expandidas
+## Funcionalidades Expandidas com sugestões do GEMINI
 2. **Táticas Futuristas**:
    * Visualização e modificação de formações de jogo.
    * Simulação de partidas com configurações quânticas.
