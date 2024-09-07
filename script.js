@@ -1,3 +1,8 @@
+
+
+
+
+
 const players = [
 
     {
@@ -199,9 +204,8 @@ const players = [
     }
 
 ];
-
 let currentTabIndex = 0;
-const tabs = ['tactics', 'players', 'simulation', 'analysis', 'history'];
+const tabs = ['tactics', 'players', 'simulation', 'analysis', 'history', 'minigames'];
 let currentFormation = '4-3-3';
 let currentFieldShape = 'rectangle';
 let currentGravity = 'normal';
@@ -213,7 +217,6 @@ const formations = {
         { x: 50, y: 30 }, { x: 50, y: 50 }, { x: 50, y: 70 }, // Midfielders
         { x: 75, y: 20 }, { x: 80, y: 50 }, { x: 75, y: 80 } // Forwards
     ],
-
     '3-4-3': [
         { x: 10, y: 50 },
         { x: 30, y: 30 }, { x: 30, y: 50 }, { x: 30, y: 70 },
@@ -324,6 +327,8 @@ function showTab(tabName) {
         showMultidimensionalAnalysis();
     } else if (tabName === 'history') {
         showHistoryRewrite();
+    } else if (tabName === 'minigames') {
+        initQuantumPenaltyGame();
     }
 }
 
@@ -457,36 +462,264 @@ function drop(ev) {
     player.style.top = (ev.clientY - player.offsetHeight / 2) + 'px';
 }
 
+// Função para busca de jogadores melhorada
+function improvedPlayerSearch() {
+    const searchInput = document.getElementById('player-search');
+    const playerList = document.getElementById('player-list');
+    const playerDetails = document.getElementById('player-details');
+
+    searchInput.addEventListener('input', function () {
+        const searchValue = this.value.toLowerCase();
+
+        // Filtra os jogadores com base na entrada de pesquisa
+        const filteredPlayers = players.filter(p =>
+            p.name.toLowerCase().includes(searchValue) ||
+            p.role.toLowerCase().includes(searchValue) ||
+            p.enhancements.some(e => e.toLowerCase().includes(searchValue))
+        );
+
+        // Limpa a lista de jogadores
+        playerList.innerHTML = '';
+
+        if (filteredPlayers.length > 0) {
+            // Preenche a lista com os jogadores filtrados
+            filteredPlayers.forEach(player => {
+                const playerItem = document.createElement('div');
+                playerItem.className = 'player-item';
+                playerItem.innerHTML = `
+                    <div class="player-info">
+                        <div class="player-photo" style="background-image: url(${player.photo})"></div>
+                        <div class="player-details">
+                            <span class="player-name">${player.name}</span>
+                            <span class="player-role">${player.role}</span>
+                            <span class="player-enhancements">${player.enhancements.join(', ')}</span>
+                        </div>
+                    </div>
+                    <div class="player-rating">
+                        ${'★'.repeat(player.rating)}${'☆'.repeat(5 - player.rating)}
+                    </div>
+                `;
+                playerItem.addEventListener('click', () => displayPlayerDetails(player));
+                playerList.appendChild(playerItem);
+            });
+
+            // Exibe detalhes do primeiro jogador encontrado
+            displayPlayerDetails(filteredPlayers[0]);
+        } else {
+            // Exibe mensagem se nenhum jogador for encontrado
+            playerList.innerHTML = '<p>Nenhum jogador encontrado.</p>';
+            playerDetails.classList.add('hidden');
+        }
+    });
+}
+
+// Função para exibir detalhes do jogador
+function displayPlayerDetails(player) {
+    const playerDetails = document.getElementById('player-details');
+
+    document.getElementById('player-name').textContent = player.name;
+    document.getElementById('player-photo').src = player.photo;
+    document.getElementById('player-role').textContent = `Posição: ${player.role}`;
+    document.getElementById('player-description').textContent = player.description;
+    document.getElementById('player-enhancements').textContent = `Melhorias: ${player.enhancements.join(', ')}`;
+
+    playerDetails.classList.remove('hidden');
+}
+
+// Minigame: Pênalti Quântico Aprimorado
+const quantumPenaltyGame = {
+    init() {
+        this.canvas = document.createElement('canvas');
+        this.canvas.width = 400;
+        this.canvas.height = 300;
+        this.ctx = this.canvas.getContext('2d');
+        this.ballPosition = { x: 200, y: 250 };
+        this.goalPosition = { x: 200, y: 50, width: 100, height: 50 };
+        this.quantumState = 'superposition';
+        this.score = 0;
+        this.misses = 0;
+        this.level = 1;
+        this.quantumPowerups = ['entanglement', 'teleportation', 'superposition'];
+        this.currentPowerup = null;
+        this.goalkeeperPosition = { x: 200, y: 70 };
+        this.goalkeeperWidth = 30;
+        this.goalkeeperHeight = 40;
+
+        this.canvas.addEventListener('click', this.shoot.bind(this));
+        this.canvas.addEventListener('mousemove', this.updateBallPosition.bind(this));
+
+        const gameContainer = document.getElementById('quantum-penalty-game');
+        gameContainer.innerHTML = '';
+        gameContainer.appendChild(this.canvas);
+
+        this.powerupButton = document.createElement('button');
+        this.powerupButton.textContent = 'Ativar Poder Quântico';
+        this.powerupButton.addEventListener('click', this.activatePowerup.bind(this));
+        gameContainer.appendChild(this.powerupButton);
+
+        this.updateScore();
+        this.draw();
+    },
+
+    draw() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Desenhar o gol
+        this.ctx.fillStyle = 'white';
+        this.ctx.fillRect(this.goalPosition.x - this.goalPosition.width / 2,
+            this.goalPosition.y,
+            this.goalPosition.width,
+            this.goalPosition.height);
+
+        // Desenhar o goleiro
+        this.ctx.fillStyle = 'red';
+        this.ctx.fillRect(this.goalkeeperPosition.x - this.goalkeeperWidth / 2,
+            this.goalkeeperPosition.y,
+            this.goalkeeperWidth,
+            this.goalkeeperHeight);
+
+        // Desenhar a bola
+        this.ctx.fillStyle = this.quantumState === 'superposition' ? 'purple' : 'white';
+        this.ctx.beginPath();
+        this.ctx.arc(this.ballPosition.x, this.ballPosition.y, 10, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        // Efeito de superposição
+        if (this.quantumState === 'superposition') {
+            this.ctx.globalAlpha = 0.5;
+            this.ctx.beginPath();
+            this.ctx.arc(this.ballPosition.x - 20, this.ballPosition.y, 10, 0, Math.PI * 2);
+            this.ctx.fill();
+            this.ctx.beginPath();
+            this.ctx.arc(this.ballPosition.x + 20, this.ballPosition.y, 10, 0, Math.PI * 2);
+            this.ctx.fill();
+            this.ctx.globalAlpha = 1;
+        }
+
+        // Desenhar o poder atual
+        this.ctx.fillStyle = 'yellow';
+        this.ctx.font = '14px Arial';
+        this.ctx.fillText(`Poder Atual: ${this.currentPowerup || 'Nenhum'}`, 10, 20);
+    },
+
+    updateBallPosition(event) {
+        const rect = this.canvas.getBoundingClientRect();
+        this.ballPosition.x = event.clientX - rect.left;
+        this.draw();
+    },
+
+    shoot() {
+        if (this.quantumState === 'superposition') {
+            this.quantumState = Math.random() < 0.5 ? 'left' : 'right';
+        }
+
+        let targetX = this.ballPosition.x;
+
+        if (this.currentPowerup === 'teleportation') {
+            targetX = Math.random() * this.canvas.width;
+        } else if (this.currentPowerup === 'entanglement') {
+            this.goalkeeperPosition.x = this.canvas.width - this.goalkeeperPosition.x;
+        }
+
+        this.animateShot(targetX);
+    },
+
+    animateShot(targetX) {
+        const animate = () => {
+            this.ballPosition.y -= 5;
+            this.ballPosition.x += (targetX - this.ballPosition.x) * 0.1;
+            this.moveGoalkeeper();
+            this.draw();
+
+            if (this.ballPosition.y > this.goalPosition.y) {
+                requestAnimationFrame(animate);
+            } else {
+                this.checkGoal(targetX);
+            }
+        };
+
+        animate();
+    },
+
+    moveGoalkeeper() {
+        const speed = 2 + this.level * 0.5;
+        if (this.goalkeeperPosition.x < this.ballPosition.x) {
+            this.goalkeeperPosition.x += speed;
+        } else {
+            this.goalkeeperPosition.x -= speed;
+        }
+    },
+
+    checkGoal(targetX) {
+        const isGoal = Math.abs(targetX - this.goalkeeperPosition.x) > this.goalkeeperWidth / 2 &&
+            targetX > this.goalPosition.x - this.goalPosition.width / 2 &&
+            targetX < this.goalPosition.x + this.goalPosition.width / 2;
+
+        if (isGoal) {
+            this.score++;
+            alert('Gol quântico!');
+            if (this.score % 3 === 0) {
+                this.level++;
+                alert(`Nível aumentado para ${this.level}!`);
+            }
+        } else {
+            this.misses++;
+            alert('Errou! A defesa quântica prevaleceu.');
+        }
+
+        this.updateScore();
+        this.reset();
+    },
+
+    reset() {
+        this.ballPosition = { x: 200, y: 250 };
+        this.quantumState = 'superposition';
+        this.currentPowerup = null;
+        this.goalkeeperPosition.x = 200;
+        this.draw();
+    },
+
+    updateScore() {
+        const scoreElement = document.getElementById('quantum-penalty-score');
+        scoreElement.textContent = `Nível: ${this.level} | Gols: ${this.score} | Defesas: ${this.misses}`;
+    },
+
+    activatePowerup() {
+        this.currentPowerup = this.quantumPowerups[Math.floor(Math.random() * this.quantumPowerups.length)];
+        alert(`Poder ativado: ${this.currentPowerup}`);
+        this.draw();
+    }
+};
+
+function initQuantumPenaltyGame() {
+    const gameContainer = document.createElement('div');
+    gameContainer.id = 'quantum-penalty-game';
+    gameContainer.innerHTML = `
+<h3>Pênalti Quântico Aprimorado</h3>
+<p>Mova o mouse para posicionar a bola. Clique para chutar. Use poderes quânticos para vencer o goleiro!</p>
+<div id="quantum-penalty-score"></div>
+`;
+
+    const minigamesTab = document.getElementById('minigames-tab');
+    if (minigamesTab) {
+        minigamesTab.appendChild(gameContainer);
+    } else {
+        console.error('Elemento minigames-tab não encontrado');
+    }
+
+    quantumPenaltyGame.init();
+}
+
 // Inicialização
 function init() {
     renderPlayers();
     populatePlayerList();
     showTab('tactics');
+    improvedPlayerSearch();
 
     const field = document.getElementById('soccer-field');
     field.addEventListener('dragover', allowDrop);
     field.addEventListener('drop', drop);
-
-    document.getElementById('player-search').addEventListener('input', function () {
-        const searchValue = this.value.toLowerCase();
-        const player = players.find(p => p.name.toLowerCase() === searchValue);
-
-        if (player) {
-            // Exibe os detalhes do jogador
-            document.getElementById('player-name').textContent = player.name;
-            document.getElementById('player-photo').src = player.photo;
-            document.getElementById('player-role').textContent = `Posição: ${player.role}`;
-            document.getElementById('player-description').textContent = player.description;
-            document.getElementById('player-enhancements').textContent = `Melhorias: ${player.enhancements.join(', ')}`;
-
-            // Mostra a seção de detalhes
-            document.getElementById('player-details').classList.remove('hidden');
-        } else {
-            // Oculta a seção de detalhes se não houver jogador encontrado
-            document.getElementById('player-details').classList.add('hidden');
-        }
-    });
-
 }
 
 // Iniciar o aplicativo
