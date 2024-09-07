@@ -1,204 +1,17 @@
 const players = [
-
-    {
-
-        name: "Neo",
-
-        position: { x: 10, y: 50 },
-
-        role: "GK",
-
-        rating: 5,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Reflexos Quânticos"],
-
-        description: "O goleiro do time com reflexos incomparáveis. Sua habilidade em defender chutes é quase sobrenatural."
-
-    },
-
-    {
-
-        name: "Morpheus",
-
-        position: { x: 30, y: 20 },
-
-        role: "RB",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Visão 360°"],
-
-        description: "Lateral direito com uma visão de jogo excepcional, capaz de cobrir todo o campo com eficácia."
-
-    },
-
-    {
-
-        name: "Trinity",
-
-        position: { x: 30, y: 40 },
-
-        role: "CB",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Teletransporte Tático"],
-
-        description: "Zagueira central com a habilidade de se teletransportar estrategicamente para bloquear ataques adversários."
-
-    },
-
-    {
-
-        name: "Cypher",
-
-        position: { x: 30, y: 60 },
-
-        role: "CB",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Campo de Força"],
-
-        description: "Zagueiro central com a capacidade de criar um campo de força para proteger a área defensiva."
-
-    },
-
-    {
-
-        name: "Oracle",
-
-        position: { x: 30, y: 80 },
-
-        role: "LB",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Previsão de Jogadas"],
-
-        description: "Lateral esquerdo com habilidades de previsão avançadas, capaz de antecipar e neutralizar jogadas adversárias."
-
-    },
-
-    {
-
-        name: "Agent Smith",
-
-        position: { x: 50, y: 50 },
-
-        role: "CDM",
-
-        rating: 5,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Replicação"],
-
-        description: "Volante com a habilidade de se replicar e dominar o meio-campo, tornando-se um adversário formidável."
-
-    },
-
-    {
-
-        name: "Niobe",
-
-        position: { x: 60, y: 30 },
-
-        role: "CAM",
-
-        rating: 5,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Controle Mental"],
-
-        description: "Meio-campista ofensiva com a capacidade de controlar a mente dos adversários e criar jogadas brilhantes."
-
-    },
-
-    {
-
-        name: "Seraph",
-
-        position: { x: 60, y: 70 },
-
-        role: "CAM",
-
-        rating: 5,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Manipulação do Tempo"],
-
-        description: "Meio-campista com habilidades para manipular o tempo e alterar o ritmo do jogo a seu favor."
-
-    },
-
-    {
-
-        name: "Mouse",
-
-        position: { x: 75, y: 20 },
-
-        role: "LW",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Invisibilidade"],
-
-        description: "Extremo esquerdo com a habilidade de se tornar invisível e surpreender os defensores adversários."
-
-    },
-
-    {
-
-        name: "Dozer",
-
-        position: { x: 80, y: 50 },
-
-        role: "ST",
-
-        rating: 5,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Super Força"],
-
-        description: "Atacante com força sobre-humana, capaz de derrubar adversários e marcar gols com facilidade."
-
-    },
-
-    {
-
-        name: "Switch",
-
-        position: { x: 75, y: 80 },
-
-        role: "RW",
-
-        rating: 4,
-
-        photo: "Camisa.jpg",
-
-        enhancements: ["Alteração de Realidade"],
-
-        description: "Extremo direito com a habilidade de alterar a realidade e criar situações favoráveis para o time."
-
-    }
-
+    { name: "Neo", position: { x: 10, y: 50 }, role: "GK", rating: 5, photo: "Camisa.jpg", enhancements: ["Reflexos Quânticos"], description: "O goleiro do time com reflexos incomparáveis." },
+    { name: "Morpheus", position: { x: 30, y: 20 }, role: "DEF", rating: 4, photo: "Camisa.jpg", enhancements: ["Visão 360°"], description: "Lateral direito com uma visão de jogo excepcional." },
+    { name: "Trinity", position: { x: 30, y: 40 }, role: "DEF", rating: 4, photo: "Camisa.jpg", enhancements: ["Teletransporte Tático"], description: "Zagueira central com a habilidade de se teletransportar." },
+    { name: "Cypher", position: { x: 30, y: 60 }, role: "DEF", rating: 4, photo: "Camisa.jpg", enhancements: ["Campo de Força"], description: "Zagueiro central com a capacidade de criar um campo de força." },
+    { name: "Oracle", position: { x: 30, y: 80 }, role: "DEF", rating: 4, photo: "Camisa.jpg", enhancements: ["Previsão de Jogadas"], description: "Lateral esquerdo com habilidades de previsão avançadas." },
+    { name: "Agent Smith", position: { x: 50, y: 30 }, role: "MID", rating: 5, photo: "Camisa.jpg", enhancements: ["Replicação"], description: "Volante com a habilidade de se replicar." },
+    { name: "Niobe", position: { x: 50, y: 50 }, role: "MID", rating: 5, photo: "Camisa.jpg", enhancements: ["Controle Mental"], description: "Meio-campista ofensiva com a capacidade de controlar a mente dos adversários." },
+    { name: "Seraph", position: { x: 50, y: 70 }, role: "MID", rating: 5, photo: "Camisa.jpg", enhancements: ["Manipulação do Tempo"], description: "Meio-campista com habilidades para manipular o tempo." },
+    { name: "Mouse", position: { x: 75, y: 20 }, role: "FWD", rating: 4, photo: "Camisa.jpg", enhancements: ["Invisibilidade"], description: "Extremo esquerdo com a habilidade de se tornar invisível." },
+    { name: "Dozer", position: { x: 75, y: 50 }, role: "FWD", rating: 5, photo: "Camisa.jpg", enhancements: ["Super Força"], description: "Atacante com força sobre-humana." },
+    { name: "Switch", position: { x: 75, y: 80 }, role: "FWD", rating: 4, photo: "Camisa.jpg", enhancements: ["Alteração de Realidade"], description: "Extremo direito com a habilidade de alterar a realidade." }
 ];
+
 let currentTabIndex = 0;
 const tabs = ['tactics', 'players', 'simulation', 'analysis', 'history', 'minigames'];
 let currentFormation = '4-3-3';
@@ -207,22 +20,22 @@ let currentGravity = 'normal';
 
 const formations = {
     '4-3-3': [
-        { x: 10, y: 50 }, // GK
-        { x: 30, y: 20 }, { x: 30, y: 40 }, { x: 30, y: 60 }, { x: 30, y: 80 }, // Defenders
-        { x: 50, y: 30 }, { x: 50, y: 50 }, { x: 50, y: 70 }, // Midfielders
-        { x: 75, y: 20 }, { x: 80, y: 50 }, { x: 75, y: 80 } // Forwards
+        { x: 10, y: 50 },
+        { x: 30, y: 20 }, { x: 30, y: 40 }, { x: 30, y: 60 }, { x: 30, y: 80 },
+        { x: 50, y: 30 }, { x: 50, y: 50 }, { x: 50, y: 70 },
+        { x: 75, y: 20 }, { x: 75, y: 50 }, { x: 75, y: 80 }
     ],
     '3-4-3': [
         { x: 10, y: 50 },
         { x: 30, y: 30 }, { x: 30, y: 50 }, { x: 30, y: 70 },
         { x: 50, y: 20 }, { x: 50, y: 40 }, { x: 50, y: 60 }, { x: 50, y: 80 },
-        { x: 75, y: 30 }, { x: 80, y: 50 }, { x: 75, y: 70 }
+        { x: 75, y: 30 }, { x: 75, y: 50 }, { x: 75, y: 70 }
     ],
     '5-3-2': [
         { x: 10, y: 50 },
         { x: 25, y: 20 }, { x: 25, y: 35 }, { x: 25, y: 50 }, { x: 25, y: 65 }, { x: 25, y: 80 },
         { x: 50, y: 30 }, { x: 50, y: 50 }, { x: 50, y: 70 },
-        { x: 80, y: 40 }, { x: 80, y: 60 }
+        { x: 75, y: 40 }, { x: 75, y: 60 }
     ]
 };
 
@@ -240,40 +53,134 @@ function renderPlayers() {
         playerElement.style.left = `${position.x}%`;
         playerElement.style.top = `${position.y}%`;
         playerElement.style.backgroundImage = `url(${player.photo})`;
-        playerElement.title = `${player.name} (${player.role}) - ${player.enhancements.join(', ')}`;
         playerElement.draggable = true;
         playerElement.addEventListener('dragstart', drag);
+
+        const nameElement = document.createElement('div');
+        nameElement.className = 'player-name';
+        nameElement.textContent = player.name;
+
+        playerElement.appendChild(nameElement);
         field.appendChild(playerElement);
     });
 }
 
-function populatePlayerList() {
-    const list = document.getElementById('player-list');
-    list.innerHTML = '';
+function renderPlayerGallery() {
+    const gallery = document.querySelector('.player-gallery');
+    gallery.innerHTML = '';
     players.forEach(player => {
-        const playerItem = document.createElement('div');
-        playerItem.className = 'player-item';
-        playerItem.innerHTML = `
-            <div class="player-info">
-                <div class="player-photo" style="background-image: url(${player.photo})"></div>
-                <div class="player-details">
-                    <span class="player-name">${player.name}</span>
-                    <span class="player-role">${player.role}</span>
-                    <span class="player-enhancements">${player.enhancements.join(', ')}</span>
-                </div>
-            </div>
-            <div class="player-rating">
-                ${'★'.repeat(player.rating)}${'☆'.repeat(5 - player.rating)}
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        card.innerHTML = `
+            <img src="${player.photo}" alt="${player.name}">
+            <div class="player-card-info">
+                <h3>${player.name}</h3>
+                <p>${player.role}</p>
+                <p>${player.enhancements.join(', ')}</p>
             </div>
         `;
-        list.appendChild(playerItem);
+        card.addEventListener('click', () => displayPlayerDetails(player));
+        gallery.appendChild(card);
+    });
+}
+
+function displayPlayerDetails(player) {
+    const details = document.querySelector('.player-details');
+    details.classList.remove('hidden');
+    details.innerHTML = `
+        <h2>${player.name}</h2>
+        <img src="${player.photo}" alt="${player.name}" style="width: 100%; max-width: 300px; height: auto; border-radius: 10px; margin-bottom: 15px;">
+        <p><strong>Posição:</strong> ${player.role}</p>
+        <p><strong>Descrição:</strong> ${player.description}</p>
+        <p><strong>Melhorias:</strong> ${player.enhancements.join(', ')}</p>
+        <div id="player-stats"></div>
+    `;
+
+    renderPlayerStats(player);
+    renderPlayerTimeline(player);
+    renderEnhancementSimulator(player);
+}
+function renderPlayerStats(player) {
+    const statsContainer = document.getElementById('player-stats');
+    statsContainer.innerHTML = '<h3>Estatísticas</h3>';
+    const stats = [
+        { name: 'Velocidade', short: 'VEL', color: '#FF4136' },
+        { name: 'Força', short: 'FOR', color: '#FF851B' },
+        { name: 'Técnica', short: 'TEC', color: '#FFDC00' },
+        { name: 'Inteligência', short: 'INT', color: '#2ECC40' },
+        { name: 'Quantum', short: 'QNT', color: '#0074D9' }
+    ];
+
+    const statContainer = document.createElement('div');
+    statContainer.style.display = 'flex';
+    statContainer.style.justifyContent = 'space-between';
+    statContainer.style.width = '100%';
+    statContainer.style.marginTop = '20px';
+
+    stats.forEach(stat => {
+        const statValue = Math.floor(Math.random() * 100);
+        const statElement = document.createElement('div');
+        statElement.style.textAlign = 'center';
+        statElement.style.width = '18%';
+        statElement.innerHTML = `
+            <div style="font-weight: bold; margin-bottom: 5px;" title="${stat.name}">${stat.short}</div>
+            <div style="width: 100%; height: 150px; background-color: rgba(255,255,255,0.1); position: relative; border-radius: 5px; overflow: hidden;">
+                <div style="position: absolute; bottom: 0; width: 100%; height: ${statValue}%; background-color: ${stat.color}; transition: height 0.5s;"></div>
+                <div style="position: absolute; width: 100%; text-align: center; top: 50%; transform: translateY(-50%); font-size: 18px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">${statValue}</div>
+            </div>
+        `;
+        statContainer.appendChild(statElement);
+    });
+
+    statsContainer.appendChild(statContainer);
+}
+
+function renderPlayerTimeline(player) {
+    const timeline = document.querySelector('.player-timeline');
+    timeline.innerHTML = '';
+    const events = [
+        { year: 2020, description: 'Início da carreira' },
+        { year: 2022, description: 'Primeira melhoria quântica' },
+        { year: 2024, description: 'MVP da Liga Quântica' }
+    ];
+    events.forEach((event, index) => {
+        const point = document.createElement('div');
+        point.className = 'timeline-point';
+        point.style.left = `${index * 50}%`;
+        point.title = `${event.year}: ${event.description}`;
+        timeline.appendChild(point);
+    });
+}
+
+function renderEnhancementSimulator(player) {
+    const simulator = document.querySelector('.enhancement-simulator');
+    simulator.innerHTML = '<h4>Simulador de Melhorias</h4>';
+    player.enhancements.forEach(enhancement => {
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.min = '0';
+        slider.max = '100';
+        slider.value = '50';
+        slider.className = 'enhancement-slider';
+        slider.addEventListener('input', updatePlayerStats);
+        const label = document.createElement('label');
+        label.textContent = enhancement;
+        simulator.appendChild(label);
+        simulator.appendChild(slider);
+    });
+}
+
+function updatePlayerStats() {
+    const statBars = document.querySelectorAll('.stat-fill');
+    statBars.forEach(bar => {
+        const newValue = Math.floor(Math.random() * 100);
+        bar.style.height = `${newValue}%`;
     });
 }
 
 function changeFormation(formation) {
     currentFormation = formation;
     renderPlayers();
-    console.log(`Formação alterada para ${formation}`);
 }
 
 function simulateQuantumMatch() {
@@ -285,7 +192,7 @@ function simulateQuantumMatch() {
     let quantumEvents = ['Superposição de Gol', 'Túnel Quântico', 'Entrelaçamento de Passes', 'Flutuação do Vácuo'];
 
     for (let minute = 1; minute <= 90; minute++) {
-        if (Math.random() < 0.15) {  // 15% chance de um evento a cada minuto
+        if (Math.random() < 0.15) {
             const event = Math.random() < 0.7 ? 'Chance de gol' : 'Gol';
             const team = Math.random() < 0.5 ? 'Casa' : 'Visitante';
             const player = players[Math.floor(Math.random() * players.length)];
@@ -309,15 +216,16 @@ function simulateQuantumMatch() {
 }
 
 function showTab(tabName) {
-    document.querySelectorAll('.content-area').forEach(tab => tab.style.display = 'none');
-    document.getElementById(`${tabName}-tab`).style.display = 'flex';
+    document.querySelectorAll('.content-area').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(`${tabName}-tab`).classList.remove('hidden');
     document.getElementById('current-tab').textContent = tabName.charAt(0).toUpperCase() + tabName.slice(1);
     currentTabIndex = tabs.indexOf(tabName);
 
     if (tabName === 'tactics') {
         renderPlayers();
     } else if (tabName === 'players') {
-        populatePlayerList();
+        renderPlayerGallery();
+        initPlayerSearch();
     } else if (tabName === 'analysis') {
         showMultidimensionalAnalysis();
     } else if (tabName === 'history') {
@@ -343,7 +251,6 @@ function showMultidimensionalAnalysis() {
     const dimensions = ['Velocidade', 'Força', 'Técnica', 'Inteligência', 'Quantum'];
     const teamData = dimensions.map(() => Math.random() * 100);
 
-    // Desenhar o gráfico de radar
     ctx.beginPath();
     for (let i = 0; i < dimensions.length; i++) {
         const angle = (Math.PI * 2 * i) / dimensions.length;
@@ -358,7 +265,6 @@ function showMultidimensionalAnalysis() {
     ctx.strokeStyle = 'rgb(75, 192, 192)';
     ctx.stroke();
 
-    // Desenhar os eixos e labels
     dimensions.forEach((dim, i) => {
         const angle = (Math.PI * 2 * i) / dimensions.length;
         const x = 200 + 180 * Math.cos(angle);
@@ -457,71 +363,57 @@ function drop(ev) {
     player.style.top = (ev.clientY - player.offsetHeight / 2) + 'px';
 }
 
-// Função para busca de jogadores melhorada
-function improvedPlayerSearch() {
+function initPlayerSearch() {
     const searchInput = document.getElementById('player-search');
-    const playerList = document.getElementById('player-list');
-    const playerDetails = document.getElementById('player-details');
+    const positionFilter = document.getElementById('position-filter');
+    const enhancementFilter = document.getElementById('enhancement-filter');
 
-    searchInput.addEventListener('input', function () {
-        const searchValue = this.value.toLowerCase();
+    searchInput.addEventListener('input', filterPlayers);
+    positionFilter.addEventListener('change', filterPlayers);
+    enhancementFilter.addEventListener('change', filterPlayers);
 
-        // Filtra os jogadores com base na entrada de pesquisa
-        const filteredPlayers = players.filter(p =>
-            p.name.toLowerCase().includes(searchValue) ||
-            p.role.toLowerCase().includes(searchValue) ||
-            p.enhancements.some(e => e.toLowerCase().includes(searchValue))
-        );
-
-        // Limpa a lista de jogadores
-        playerList.innerHTML = '';
-
-        if (filteredPlayers.length > 0) {
-            // Preenche a lista com os jogadores filtrados
-            filteredPlayers.forEach(player => {
-                const playerItem = document.createElement('div');
-                playerItem.className = 'player-item';
-                playerItem.innerHTML = `
-                    <div class="player-info">
-                        <div class="player-photo" style="background-image: url(${player.photo})"></div>
-                        <div class="player-details">
-                            <span class="player-name">${player.name}</span>
-                            <span class="player-role">${player.role}</span>
-                            <span class="player-enhancements">${player.enhancements.join(', ')}</span>
-                        </div>
-                    </div>
-                    <div class="player-rating">
-                        ${'★'.repeat(player.rating)}${'☆'.repeat(5 - player.rating)}
-                    </div>
-                `;
-                playerItem.addEventListener('click', () => displayPlayerDetails(player));
-                playerList.appendChild(playerItem);
-            });
-
-            // Exibe detalhes do primeiro jogador encontrado
-            displayPlayerDetails(filteredPlayers[0]);
-        } else {
-            // Exibe mensagem se nenhum jogador for encontrado
-            playerList.innerHTML = '<p>Nenhum jogador encontrado.</p>';
-            playerDetails.classList.add('hidden');
-        }
+    const allEnhancements = [...new Set(players.flatMap(p => p.enhancements))];
+    allEnhancements.forEach(enhancement => {
+        const option = document.createElement('option');
+        option.value = enhancement;
+        option.textContent = enhancement;
+        enhancementFilter.appendChild(option);
     });
 }
 
-// Função para exibir detalhes do jogador
-function displayPlayerDetails(player) {
-    const playerDetails = document.getElementById('player-details');
+function filterPlayers() {
+    const searchTerm = document.getElementById('player-search').value.toLowerCase();
+    const positionFilter = document.getElementById('position-filter').value;
+    const enhancementFilter = document.getElementById('enhancement-filter').value;
 
-    document.getElementById('player-name').textContent = player.name;
-    document.getElementById('player-photo').src = player.photo;
-    document.getElementById('player-role').textContent = `Posição: ${player.role}`;
-    document.getElementById('player-description').textContent = player.description;
-    document.getElementById('player-enhancements').textContent = `Melhorias: ${player.enhancements.join(', ')}`;
+    const filteredPlayers = players.filter(player =>
+        player.name.toLowerCase().includes(searchTerm) &&
+        (positionFilter === '' || player.role === positionFilter) &&
+        (enhancementFilter === '' || player.enhancements.includes(enhancementFilter))
+    );
 
-    playerDetails.classList.remove('hidden');
+    renderFilteredPlayers(filteredPlayers);
 }
 
-// Minigame: Pênalti Quântico Aprimorado
+function renderFilteredPlayers(filteredPlayers) {
+    const gallery = document.querySelector('.player-gallery');
+    gallery.innerHTML = '';
+    filteredPlayers.forEach(player => {
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        card.innerHTML = `
+            <img src="${player.photo}" alt="${player.name}">
+            <div class="player-card-info">
+                <h3>${player.name}</h3>
+                <p>${player.role}</p>
+                <p>${player.enhancements.join(', ')}</p>
+            </div>
+        `;
+        card.addEventListener('click', () => displayPlayerDetails(player));
+        gallery.appendChild(card);
+    });
+}
+
 const quantumPenaltyGame = {
     init() {
         this.canvas = document.createElement('canvas');
@@ -690,10 +582,10 @@ function initQuantumPenaltyGame() {
     const gameContainer = document.createElement('div');
     gameContainer.id = 'quantum-penalty-game';
     gameContainer.innerHTML = `
-<h3>Pênalti Quântico Aprimorado</h3>
-<p>Mova o mouse para posicionar a bola. Clique para chutar. Use poderes quânticos para vencer o goleiro!</p>
-<div id="quantum-penalty-score"></div>
-`;
+        <h3>Pênalti Quântico Aprimorado</h3>
+        <p>Mova o mouse para posicionar a bola. Clique para chutar. Use poderes quânticos para vencer o goleiro!</p>
+        <div id="quantum-penalty-score"></div>
+    `;
 
     const minigamesTab = document.getElementById('minigames-tab');
     if (minigamesTab) {
@@ -705,17 +597,12 @@ function initQuantumPenaltyGame() {
     quantumPenaltyGame.init();
 }
 
-// Inicialização
 function init() {
     renderPlayers();
-    populatePlayerList();
     showTab('tactics');
-    improvedPlayerSearch();
-
     const field = document.getElementById('soccer-field');
     field.addEventListener('dragover', allowDrop);
     field.addEventListener('drop', drop);
 }
 
-// Iniciar o aplicativo
 window.onload = init;
