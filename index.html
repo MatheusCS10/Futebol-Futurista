@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futebol Quântico do Futuro</title>
+    <title>Futebol Quântico</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,27 +12,13 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <input type="text" id="player-search" class="search-box" placeholder="Buscar jogador...">
-            <div class="sidebar-item active" onclick="showTab('tactics')">
-                Táticas Futuristas
-            </div>
-            <div class="sidebar-item" onclick="showTab('players')">
-                Super Jogadores
-            </div>
-            <div class="sidebar-item" onclick="showTab('simulation')">
-                Simulação Quântica
-            </div>
-            <div class="sidebar-item" onclick="showTab('analysis')">
-                Análise Multidimensional
-            </div>
-            <div class="sidebar-item" onclick="showTab('history')">
-                Reescrever História
-            </div>
-            <div class="sidebar-item" onclick="showTab('minigames')">
-                Minigames Quânticos
-            </div>
+            <div class="sidebar-item" onclick="showTab('tactics')">Táticas Futuristas</div>
+            <div class="sidebar-item" onclick="showTab('players')">Super Jogadores</div>
+            <div class="sidebar-item" onclick="showTab('simulation')">Simulação Quântica</div>
+            <div class="sidebar-item" onclick="showTab('analysis')">Análise Multidimensional</div>
+            <div class="sidebar-item" onclick="showTab('history')">Reescrever História</div>
+            <div class="sidebar-item" onclick="showTab('minigames')">Minigames Quânticos</div>
         </div>
-
         <div class="main-content">
             <div class="top-bar">
                 <h2 id="current-tab">Táticas Futuristas</h2>
@@ -41,67 +27,77 @@
                     <button onclick="navigate(1)">→</button>
                 </div>
             </div>
-
             <div id="tactics-tab" class="content-area">
                 <div class="field-container">
                     <div id="soccer-field" class="soccer-field"></div>
-                    <div class="controls">
-                        <button onclick="changeFormation('4-3-3')">4-3-3 Clássico</button>
-                        <button onclick="changeFormation('3-4-3')">3-4-3 Ofensivo</button>
-                        <button onclick="changeFormation('5-3-2')">5-3-2 Defensivo</button>
-                        <button onclick="simulateQuantumMatch()">Simular Partida Quântica</button>
-                    </div>
-                    <div id="customization-options">
-                        <select id="field-shape" onchange="changeFieldShape()">
-                            <option value="rectangle">Retângulo Clássico</option>
-                            <option value="circle">Círculo Futurista</option>
-                            <option value="triangle">Triângulo Desafiador</option>
-                        </select>
-                        <select id="gravity-setting" onchange="changeGravity()">
-                            <option value="normal">Gravidade Normal</option>
-                            <option value="low">Gravidade Baixa</option>
-                            <option value="high">Gravidade Alta</option>
-                        </select>
-                    </div>
                 </div>
-                <div id="player-list" class="player-list"></div>
+                <div class="controls">
+                    <button onclick="changeFormation('4-3-3')">4-3-3 Clássico</button>
+                    <button onclick="changeFormation('3-4-3')">3-4-3 Ofensivo</button>
+                    <button onclick="changeFormation('5-3-2')">5-3-2 Defensivo</button>
+                    <button onclick="simulateQuantumMatch()">Simular Partida Quântica</button>
+                </div>
+                <div id="customization-options">
+                    <select id="field-shape" onchange="changeFieldShape()">
+                        <option value="rectangle">Retângulo Clássico</option>
+                        <option value="circle">Círculo Futurista</option>
+                        <option value="triangle">Triângulo Desafiador</option>
+                    </select>
+                    <select id="gravity-setting" onchange="changeGravity()">
+                        <option value="normal">Gravidade Normal</option>
+                        <option value="low">Gravidade Baixa</option>
+                        <option value="high">Gravidade Alta</option>
+                    </select>
+                </div>
             </div>
-
             <div id="players-tab" class="content-area hidden">
-                <h3>Laboratório de Super Jogadores</h3>
-                <div id="player-list"></div>
-                <div id="player-details" class="hidden">
-                    <h4 id="player-name"></h4>
+                <div class="player-controls">
+                    <input type="text" id="player-search" placeholder="Buscar jogador..." class="search-box">
+                    <select id="position-filter" class="filter-select">
+                        <option value="">Todas as Posições</option>
+                        <option value="GK">Goleiro</option>
+                        <option value="DEF">Defensor</option>
+                        <option value="MID">Meio-campo</option>
+                        <option value="FWD">Atacante</option>
+                    </select>
+                    <select id="enhancement-filter" class="filter-select">
+                        <option value="">Todas as Melhorias</option>
+                    </select>
+                </div>
+                <div class="player-gallery"></div>
+                <div class="player-details hidden">
+                    <h3 id="player-name"></h3>
                     <img id="player-photo" src="" alt="Foto do jogador">
                     <p id="player-role"></p>
                     <p id="player-description"></p>
+                    <div id="player-stats"></div>
                     <p id="player-enhancements"></p>
+                    <div class="player-timeline"></div>
+                    <div class="enhancement-simulator">
+                        <h4>Simulador de Melhorias</h4>
+                        <div id="enhancement-sliders"></div>
+                    </div>
                 </div>
             </div>
-
             <div id="simulation-tab" class="content-area hidden">
                 <h3>Simulação Quântica de Jogo</h3>
                 <button onclick="simulateQuantumMatch()">Iniciar Simulação Quântica</button>
                 <div id="match-simulation"></div>
             </div>
-
             <div id="analysis-tab" class="content-area hidden">
                 <h3>Análise de Desempenho Multidimensional</h3>
                 <div id="performance-analysis"></div>
             </div>
-
             <div id="history-tab" class="content-area hidden">
                 <h3>Reescrever a História do Futebol</h3>
                 <div id="history-rewrite"></div>
             </div>
-
             <div id="minigames-tab" class="content-area hidden">
                 <h3>Minigames Quânticos</h3>
-                <!-- O conteúdo do minigame será inserido aqui pelo JavaScript -->
+                <div id="quantum-penalty-game"></div>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
