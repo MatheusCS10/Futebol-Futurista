@@ -10,7 +10,7 @@ const players = [
 
         rating: 5,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Reflexos Quânticos"],
 
@@ -28,7 +28,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Visão 360°"],
 
@@ -46,7 +46,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Teletransporte Tático"],
 
@@ -64,7 +64,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Campo de Força"],
 
@@ -82,7 +82,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Previsão de Jogadas"],
 
@@ -100,7 +100,7 @@ const players = [
 
         rating: 5,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Replicação"],
 
@@ -118,7 +118,7 @@ const players = [
 
         rating: 5,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Controle Mental"],
 
@@ -136,7 +136,7 @@ const players = [
 
         rating: 5,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Manipulação do Tempo"],
 
@@ -154,7 +154,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Invisibilidade"],
 
@@ -172,7 +172,7 @@ const players = [
 
         rating: 5,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Super Força"],
 
@@ -190,7 +190,7 @@ const players = [
 
         rating: 4,
 
-        photo: "https://img.freepik.com/fotos-premium/modelo-de-camisa-de-futebol-realista-stuttgart-2023-para-footbool-ai-gerado_950989-160.jpg?w=740",
+        photo: "Camisa.jpg",
 
         enhancements: ["Alteração de Realidade"],
 
